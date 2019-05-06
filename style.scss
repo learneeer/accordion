@@ -1,50 +1,55 @@
-$accordion_color: rgb(172, 115, 115);
-$accordion_btn_color: rgb(247, 206, 206);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-$text_color: rgb(43, 11, 11);
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    font-family: monospace;
 }
 
-.container_accordion{
+$accordion_color: rgba(89, 221, 37, 0.527);
+$accordion_hover: rgb(83, 175, 41);
+$text_color: rgba(20, 19, 19, 0.863);
+
+.acc {
+    background-color: $accordion_color;
+    color: $text_color;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 18px;
     width: 200px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
 
-    .accordion_btn {
-        background-color: $accordion_btn_color;
+    &:after {
+        content: '\1F60E';
         color: $text_color;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        transition: 0.4s;
-
-        &:hover {
-            background-color: $accordion_color;
-        }
-
-        &.color_active {
-            background-color: $accordion_color;
-        }
+        font-size: 25px;
+        float: right;
+        margin-left: 3px;
     }
 
-    .accordion_content {
-        display: none;
-        background-color: white;
-        overflow: hidden;
-        min-height: 50px;
-        border: 1px solid $accordion_btn_color;
-        color:$text_color;
+    &:hover {
+        background-color: $accordion_hover;
     }
 
+    &.active {
+        background-color: $accordion_hover;
+
+        &:after {
+            content: "\1F610";
+        }
+    }
 }
 
 
-
-
-
+.acc_content {
+    width: 200px;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    border: 1px solid $accordion_color;
+    transition: max-height 0.2s ease-out;
+}
