@@ -1,0 +1,50 @@
+$accordion_color: rgb(172, 115, 115);
+$accordion_btn_color: rgb(247, 206, 206);
+
+$text_color: rgb(43, 11, 11);
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container_accordion{
+    width: 200px;
+
+    .accordion_btn {
+        background-color: $accordion_btn_color;
+        color: $text_color;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+
+        &:hover {
+            background-color: $accordion_color;
+        }
+
+        &.color_active {
+            background-color: $accordion_color;
+        }
+    }
+
+    .accordion_content {
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        min-height: 50px;
+        border: 1px solid $accordion_btn_color;
+        color:$text_color;
+    }
+
+}
+
+
+
+
+
