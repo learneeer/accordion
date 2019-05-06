@@ -1,17 +1,15 @@
-var accordion_btn = document.getElementsByClassName("accordion_btn");
+var acc = document.getElementsByClassName("acc");
 
-for (var i = 0; i < accordion_btn.length; i++) {
-    accordion_btn[i].addEventListener("click", function () {
-        this.classList.toggle("color_active");
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
 
+    this.classList.toggle("active");
 
-        var accordion_content = this.nextElementSibling;
-
-        if(accordion_content.style.display === "block") {
-            accordion_content.style.display = "none";
-
-        }else{
-            accordion_content.style.display = "block";
-        }
-    });
+    var acc_content = this.nextElementSibling;
+    if (acc_content.style.maxHeight){
+      acc_content.style.maxHeight = null;
+    } else {
+      acc_content.style.maxHeight = acc_content.scrollHeight + "px";
+    }
+  });
 }
